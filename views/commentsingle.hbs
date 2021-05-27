@@ -1,0 +1,30 @@
+ 
+ <article class="media">
+      <figure style="overflow:hidden; border-radius: 5px"class="media-left">
+        <p class="image is-48x48">
+          <img src="/avatar.png">
+        </p>
+      </figure>
+      <div class="media-content">
+        <div class="content">
+          <p>
+            <strong>{{this.author.username}}</strong>
+            <br>
+            {{this.content}}
+            <br>
+          </p>
+          <small>
+
+            {{#if @root.username}}
+            <button id='{{this.id}}' class=" delete-button button is-danger is-small is-outlined">
+              <span>Удалить</span>
+              <span class="icon is-small">
+                <i class="fas fa-times"></i>
+              </span>
+            </button>
+            {{/if}}
+          </small>
+        </div>
+      </div>
+    </article>
+</article>

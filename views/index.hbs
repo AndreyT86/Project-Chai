@@ -1,0 +1,28 @@
+<div class="background-soft"></div>
+<main class="main-story p-5">
+  <h1 style="color: white"class="title is-1 has-text-centered">Чайная история</h1>
+  <div class="tea-list is-flex-direction-row is-flex-wrap-wrap container ">
+    {{#each teaList}}
+      <a href="/tea/{{this.id}}" class="m-1 is-two-thirds card">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <img src="/images/{{this.image}}" alt="">
+          </figure>
+        </div>
+        <div class="card-content">
+        <p class="title is-3">{{this.name}}</p>
+        <p class="subtitle is-5">Происхождение: <br>{{this.location}}</p>
+        </div>
+      </a>
+    {{/each}}
+  </div>
+   <div class="columns">
+    <div class="column"></div>
+    <div class="column m-5 is-two-thirds" >
+      <div class="title has-text-centered is-3">Чайная карта</div>
+      <div id='mapbox' style='width: 100%; height: 600px;'></div>
+    </div>
+    <div class="column"></div>
+    </div>
+</main>
+

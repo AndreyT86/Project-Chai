@@ -1,0 +1,74 @@
+{{#if comments}}
+<div class="p-5 container">
+  <div class="title">Комментарии</div>
+{{#each comments}}
+  {{>commentsingle}}
+{{/each}}
+</div>
+{{else}}
+<article class="message ">
+  <div class="message-body">
+Комментариев пока нет  😞</div>
+</article>
+{{/if}}
+
+{{!-- {{username.username}} --}}
+
+
+{{#if username}}
+
+
+<div class="is-small m-5 p-5 column box">
+    <form class="registration-form field is-fullwidth" action="/comments/add" method="post">
+      <div class="title" id="message">Оставить комментарий</div>
+      <div class="field">
+        <div class="control">
+          <textarea class="textarea has-fixed-size" required placeholder="Текст комментария" name="content" type="text"></textarea>
+        </div>
+      </div>
+      <div style="display:none"class="field">
+        <div class="control">
+          <input class="input has-fixed-size" required placeholder="Текст комментария" name="id" value="{{tea._id}}" type="text">
+        </div>
+      </div>
+      <div class="control is-fullwidth">
+        <button class="button is-fullwidth is-link">
+          <span class="icon">
+            <i class="fa fa-comment"></i>
+          </span>
+          <span>Отправить</span>
+        </button>
+      </div>
+  </form>
+</div>
+<div class="column"></div>
+{{else }}
+<div class="is-small has-background-white-bis m-5 p-5 column box">
+    <form class="registration-form field is-fullwidth" action="/comments/add" method="post">
+      <div class="title" id="message">Оставить комментарий</div>
+      <div class="m-2 control is-fullwidth">
+        <button disabled class="button is-fullwidth is-warning">
+          <span class="icon">
+            <i class="fa fa-ban"></i>
+          </span>
+          <span>Только зарегистрированные пользователи могут оставлять комментарии</span>
+        </button>
+      </div>
+      <div class="field">
+        <div class="control">
+          <textarea disabled class="disabled textarea has-fixed-size" required placeholder="Текст комментария" name="content" type="text"></textarea>
+        </div>
+      </div>
+      <div class="m-2 control is-fullwidth">
+        <a class="button is-fullwidth is-primary" href="/register">
+        <span class="icon">
+            <i class="fa fa-user-plus"></i>
+          </span>
+        <span>Зарегистрироваться</span>
+        </a>
+
+      </div>
+
+  </form>
+</div>
+{{/if}}
